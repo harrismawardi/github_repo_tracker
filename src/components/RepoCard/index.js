@@ -1,12 +1,14 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-function RepoCard({ repoName }) {
+function RepoCard() {
 
-    // get data from store
+    const location = useLocation();
+    const repoName = location.split('/')[1];
     const allRepos = useSelector(state => state.result.repos);
     const repoData = allRepos.filter(repo => repo.name === repoName);
-    const error = useSelector(state => state.error)
+    const error = useSelector(state => state.error);
 
     const renderCard = repoData => (
             <div id="repo-card">
@@ -29,7 +31,6 @@ function RepoCard({ repoName }) {
             </div>
         )
 
-    // add logic for displaying errors
     return(
         <>{ error ? <p role="alert">Could not find the repo data</p> : renderCard(repoData) }</>
     )
