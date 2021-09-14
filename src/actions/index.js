@@ -6,7 +6,7 @@ const loadResult = (userObj, repoArr) => ({
     }
 })
 
-const getResults = (username) => {
+const getResults = async (username) => {
     try {
         const userData = await userRequest(username);
         const repoData = await repoRequest(username);
@@ -37,7 +37,7 @@ const userRequest = async (username) => {
     return filteredData;
 }
 
-const repoRequest = (username) => {
+const repoRequest = async (username) => {
     const resp = await fetch(`https://api.github.com/users/${username}/repos`)
     const data = await resp.json()
 
