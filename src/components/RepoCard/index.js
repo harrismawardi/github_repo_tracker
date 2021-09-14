@@ -1,21 +1,23 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 
-function RepoCard() {
+function RepoCard({ repoName }) {
 
     // get data from store
-    // const repoData
+    const allRepos = useSelector(state => state.result.repos);
+    const repoData = allRepos.filter(repo => repo.name === repoName);
+    const error = useSelector(state => state.error)
 
     const renderCard = repoData => (
             <div id="repo-card">
                 <div className="intro">
-                    <span className="p-name">{repo.name}</span>
-                    <span className="p-description">{repo.description}</span>
+                    <span className="repo-name">{repo.name}</span>
+                    <span className="repo-description">{repo.description}</span>
                 </div>
 
-                <span>Created on: {repo.created_at.slice(0, 10)}</span>
-                <span>Language: {repo.language}</span>
-
                 <div className="stats">
+                    <span>Created on: {repo.created_at.slice(0, 10)}</span>
+                    <span>Language: {repo.language}</span>
                     <span>Forks: {repo.forks}</span>
                     <span>Stargazers: {repo.stargazers_count}</span>
                 </div>
@@ -28,7 +30,9 @@ function RepoCard() {
         )
 
     // add logic for displaying errors
-    return({ renderCard() })
+    return(
+        <>{ error ? <p role="alert">Could not find the repo data</p> : renderCard(repoData) }</>
+    )
 }
 
 export default RepoCard;
