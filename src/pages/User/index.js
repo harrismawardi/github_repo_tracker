@@ -1,5 +1,5 @@
 import React from "react";
-import { RepoList } from "../../components";
+import { Profile, RepoList } from "../../components";
 
 const User = () => {
   return (
