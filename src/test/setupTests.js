@@ -1,8 +1,10 @@
 import React from 'react';
 
 import '@testing-library/jest-dom';
-
+import "@testing-library/jest-dom/extend-expect";
+import userEvent from "@testing-library/user-event";
 import { render } from '@testing-library/react';
+
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
@@ -34,3 +36,5 @@ const renderWithReduxProvider = (ui, options={}) => {
 
 global.renderWithReduxProvider = renderWithReduxProvider
 global.React = React;
+global.render = render;
+global.userEvent = userEvent;
