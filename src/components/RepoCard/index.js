@@ -20,7 +20,6 @@ function RepoCard() {
         copy(repo[linkType])
     }
 
-    console.log(repo)
     const renderCard = repo => (
             <div id="repo-card">
                 <div className="intro">
