@@ -11,5 +11,18 @@ describe("Header", () => {
     );
   });
 
+  it('renders error message if error is not false', () => {
+      const initState = { error: 'Some error message' };
+      renderWithReduxProvider(<Header />, { initState });
+      const error = screen.getByRole('alert');
+      expect(error.textContent).toBe('Some error message');
+  })
+
+  it('does not render error message if error is false', () => {
+      const initState = { error: false };
+      renderWithReduxProvider(<Header />, { initState });
+      const error = screen.queryByRole('alert');
+      expect(error).not.toBeInTheDocument();
+  })
 
 });

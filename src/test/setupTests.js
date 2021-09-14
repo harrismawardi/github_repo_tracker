@@ -6,6 +6,7 @@ import userEvent from "@testing-library/user-event";
 import { render } from '@testing-library/react';
 
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
@@ -24,7 +25,9 @@ const TestProviders = ({ initState }) => {
 
     return ({ children }) => (
         <Provider store={testStore}>
-            { children }
+            <Router>
+                { children }
+            </Router>
         </Provider>
     )
 }
