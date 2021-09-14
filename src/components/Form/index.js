@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import a method from actions
+import { getResults } from '../../actions';
 
 function Form() {
 
     const [ username, setUsername ] = useState('');
+    const dispatch = useDispatch();
 
     function updateInput(e) {
         setUsername(e.target.value);
@@ -12,14 +13,12 @@ function Form() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        //  send username to github API
-        //   using the 'actions' method and
-        //    dispatch the results to the store
+        getResults(dispatch, username);
         setUsername('');
     }
 
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <input aria-label="username" type="text" value={username} onChange={updateInput}/>
             <input type="submit" value="Submit"/>
         </form>
