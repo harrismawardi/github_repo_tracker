@@ -4,7 +4,7 @@ const initState =
         user: { name: '', login: '', bio: '', avatar_url:'' },
         repos: [],
     },
-    error: false
+    error: null
 }
 
 const searchReducer = (state = initState, action) => {
