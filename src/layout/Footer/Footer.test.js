@@ -1,5 +1,5 @@
 import { default as Footer } from '.';
-import { screen, render } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 
 describe('Footer', () => {
 
