@@ -29,7 +29,7 @@ function RepoCard() {
                 </div>
 
                 <div className="stats">
-                    {/* <span className="repo-date">Created on: {repo.created_at.slice(0, 10)}</span> */}
+                    <span className="repo-date">Created on: {repo.created_at.slice(0, 10)}</span>
                     <span className="repo-lang">Language: {repo.language}</span>
                     <span classname="repo-forks">Forks: {repo.forks_count}</span>
                     <span className="repo-stars">Stargazers: {repo.stargazers_count}</span>
