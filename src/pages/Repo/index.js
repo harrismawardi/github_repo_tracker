@@ -1,15 +1,15 @@
 import React from "react";
-import { RepoCard } from '../../components';
+import { BackButton, RepoCard } from "../../components";
 
 const Repo = () => {
+  // the RepoCard needs the repoName props !!!
 
-    // the RepoCard needs the repoName props !!!
-
-    return(
-        <>
-            <RepoCard/>
-        </>
-    )
+  return (
+    <>
+      <RepoCard />
+      <BackButton />
+    </>
+  );
 };
 
 export default Repo;
