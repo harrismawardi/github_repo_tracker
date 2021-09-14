@@ -2,11 +2,11 @@ import React from "react";
 import { RepoList } from "../../components";
 
 const User = () => {
-  return
+  return(
   <div>
     Userpage
     <RepoList />
-  </div>;
+  </div>)
 };
 
 export default User;
