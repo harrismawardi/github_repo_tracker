@@ -21,7 +21,7 @@ function Form() {
     return(
         <form>
             <input aria-label="username" type="text" value={username} onChange={updateInput}/>
-            <input type="submit" value="Submit" /
+            <input type="submit" value="Submit"/>
         </form>
     )
 }
