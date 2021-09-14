@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import copy from 'copy-to-clipboard';
+import './style.css';
 
 function RepoCard() {
 
