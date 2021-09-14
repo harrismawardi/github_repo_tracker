@@ -7,7 +7,8 @@ function RepoCard() {
 
     // get name of the repo to be displyed
     const location = useLocation();
-    const repoName = location.path.split('/')[1];
+    const repoName = location.pathname.split('/')[2];
+    
     // get data for single repo
     const allRepos = useSelector(state => state.result.repos);
     const repo = allRepos.filter(repo => repo.name === repoName);
@@ -19,6 +20,7 @@ function RepoCard() {
         copy(repo[linkType])
     }
 
+    console.log(repo)
     const renderCard = repo => (
             <div id="repo-card">
                 <div className="intro">
@@ -27,7 +29,7 @@ function RepoCard() {
                 </div>
 
                 <div className="stats">
-                    <span className="repo-date">Created on: {repo.created_at.slice(0, 10)}</span>
+                    {/* <span className="repo-date">Created on: {repo.created_at.slice(0, 10)}</span> */}
                     <span className="repo-lang">Language: {repo.language}</span>
                     <span classname="repo-forks">Forks: {repo.forks_count}</span>
                     <span className="repo-stars">Stargazers: {repo.stargazers_count}</span>
@@ -41,7 +43,7 @@ function RepoCard() {
         )
 
     return(
-        <>{ error ? <p role="alert">Could not find the repo data</p> : renderCard(repo) }</>
+        <>{ error ? <p role="alert">Could not find the repo data</p> : renderCard(repo[0]) }</>
     )
 }
 
