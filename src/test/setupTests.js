@@ -19,7 +19,7 @@ const TestProviders = ({ initState }) => {
         },
         error: null
     };
-    let testReducer = () => searchReducer(initState, { type: '@@INIT' })
+    let testReducer = () => reducer(initState, { type: '@@INIT' })
     const testStore = createStore(testReducer, applyMiddleware(thunk))
 
     return ({ children }) => (
