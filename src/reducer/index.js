@@ -1,16 +1,18 @@
-const initState = 
+const initState =
 {
-    user: { name: '', username:'', bio: ''},
-    repos: [],
+    result: {
+        user: { name: '', login: '', bio: '', avatar_url:'' },
+        repos: [],
+    },
     error: false
 }
 
-const searchReducer = (state=initState, action) => {
-    switch(action.type){
-        case 'LOAD_RESULT': 
-            return {...state, repos: action.payload}
+const searchReducer = (state = initState, action) => {
+    switch (action.type) {
+        case 'LOAD_RESULT':
+            return { ...state, result: action.payload }
         case 'SET_ERROR':
-            return {...state, error: action.payload}
+            return { ...state, error: action.payload }
         default:
             return state
     }
