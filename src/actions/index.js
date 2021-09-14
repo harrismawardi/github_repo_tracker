@@ -6,7 +6,7 @@ const loadResult = (userObj, repoArr) => ({
     }
 })
 
-const getResults = async (username) => {
+const getResults = async (dispatch, username) => {
     try {
         const userData = await userRequest(username);
         const repoData = await repoRequest(username);
