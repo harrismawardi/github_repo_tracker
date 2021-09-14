@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import "./style.css";
 
 function UserCard() {
   const user = useSelector((state) => state.result.user);
@@ -8,12 +9,12 @@ function UserCard() {
   const renderUser = (user) => (
     <div id="user-card">
       <div className="user-intro">
-        <span className="repo-login">{user.login}</span>
+        <span className="user-login">{user.login}</span>
         <br />
-        <span className="repo-name">{user.name}</span>
+        <span className="user-name">{user.name}</span>
       </div>
 
-      <img className="profile-img" src={user.avatar_url} alt="profile-pic" />
+      <img className="profile-img" src={user.avatar_url} />
 
       <div className="user-bio">
         <p>{user.bio}</p>
