@@ -14,6 +14,7 @@ const getResults = async (dispatch, username) => {
 
     } catch (err) {
         dispatch({type:'SET_ERROR', payload: `oh no! ${err.message}`})
+        console.log(err);
     }
 }
 
