@@ -1,7 +1,7 @@
 const initState =
 {
     result: {
-        user: { name: '', username: '', bio: '' },
+        user: { name: '', login: '', bio: '', avatar_url:'' },
         repos: [],
     },
     error: false

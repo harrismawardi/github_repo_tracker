@@ -1,10 +1,8 @@
-
-
-const loadResult = (userData, repoData) => ({
+const loadResult = (userObj, repoArr) => ({
     type: 'LOAD_RESULT',
     payload: {
-        user: {...userData},
-        repos: {...repoData}
+        user: userObj,
+        repos: repoArr
     }
 })
 
@@ -15,24 +13,48 @@ const getResults = (username) => {
         dispatch(loadResult(userData, repoData))
 
     } catch (err) {
-        //dispatch err message
+        dispatch({type:'SET_ERROR', payload: `oh no! ${err.message}`})
     }
 }
+
+
+
+//--------------Helpers------------------//
 
 
 const userRequest = async (username) => {
     const resp = await fetch(`https://api.github.com/users/${username}`)
     const data = await resp.json()
 
-    //filter out the good stuff into new object
+    const filteredData =
+    {
+        name: data.name,
+        login: data.login,
+        bio: data.bio,
+        avatar_url: data.avatar_url
+    }
 
-    return filteredData
+    return filteredData;
 }
 
 const repoRequest = (username) => {
     const resp = await fetch(`https://api.github.com/users/${username}/repos`)
     const data = await resp.json()
 
-    //filter out the good stuff into the new object
+    const filteredData = data.map(repo => (
+        {
+            name: repo.name,
+            description: repo.description,
+            forks_count: repo.forks_count,
+            html_url: repo.html_url,
+            ssh_url: repo.ssh_url,
+            stargazers_count: repo.stargazers_count,
+            language: repo.language,
+            created_at: repo.created_at
+        }
+    ))
+
     return filteredData
 }
+
+export {loadResult, getResults}
