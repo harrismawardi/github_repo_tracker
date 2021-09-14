@@ -1,5 +1,5 @@
 import React from 'react';
-import Form from '../components'
+import { Form } from '../../components'
 import './style.css';
 
 function Header() {
