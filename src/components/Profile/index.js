@@ -9,6 +9,7 @@ function UserCard() {
     <div id="user-card">
       <div className="user-intro">
         <span className="repo-login">{user.login}</span>
+        <br />
         <span className="repo-name">{user.name}</span>
       </div>
 
