@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+// import a method from actions
 
 function Form() {
 
@@ -10,9 +12,9 @@ function Form() {
 
     function handleSubmit(e) {
         e.preventDefault();
-        // send username to github API
-        //
-        //
+        //  send username to github API
+        //   using the 'actions' method and
+        //    dispatch the results to the store
         setUsername('');
     }
 
