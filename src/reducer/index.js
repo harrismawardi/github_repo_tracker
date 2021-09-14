@@ -4,13 +4,13 @@ const initState =
         user: { name: '', login: '', bio: '', avatar_url:'' },
         repos: [],
     },
-    error: false
+    error: null
 }
 
 const searchReducer = (state = initState, action) => {
     switch (action.type) {
         case 'LOAD_RESULT':
-            return { ...state, result: action.payload }
+            return { ...state, result: action.payload, error: false }
         case 'SET_ERROR':
             return { ...state, error: action.payload }
         default:

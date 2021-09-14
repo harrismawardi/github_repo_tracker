@@ -1,37 +1,47 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import copy from 'copy-to-clipboard';
 
-function RepoCard({ repoName }) {
+function RepoCard() {
 
-    // get data from store
+    // get name of the repo to be displyed
+    const location = useLocation();
+    const repoName = location.path.split('/')[1];
+    // get data for single repo
     const allRepos = useSelector(state => state.result.repos);
-    const repoData = allRepos.filter(repo => repo.name === repoName);
-    const error = useSelector(state => state.error)
+    const repo = allRepos.filter(repo => repo.name === repoName);
+    const error = useSelector(state => state.error);
 
-    const renderCard = repoData => (
+    function copyToClipboard(e) {
+        e.preventDefault();
+        const linkType = e.target.id;
+        copy(repo[linkType])
+    }
+
+    const renderCard = repo => (
             <div id="repo-card">
                 <div className="intro">
                     <span className="repo-name">{repo.name}</span>
-                    <span className="repo-description">{repo.description}</span>
+                    <span className="repo-desc">{repo.description}</span>
                 </div>
 
                 <div className="stats">
-                    <span>Created on: {repo.created_at.slice(0, 10)}</span>
-                    <span>Language: {repo.language}</span>
-                    <span>Forks: {repo.forks}</span>
-                    <span>Stargazers: {repo.stargazers_count}</span>
+                    <span className="repo-date">Created on: {repo.created_at.slice(0, 10)}</span>
+                    <span className="repo-lang">Language: {repo.language}</span>
+                    <span classname="repo-forks">Forks: {repo.forks_count}</span>
+                    <span className="repo-stars">Stargazers: {repo.stargazers_count}</span>
                 </div>
 
                 <div className="links">
-                    <button id="https-link">Copy https link</button>
-                    <button id="ssh-link">Copy SSH link</button>
+                    <button onClick={copyToClipboard} id="html_link">Copy HTML link</button>
+                    <button onClick={copyToClipboard} id="ssh_link">Copy SSH link</button>
                 </div>
             </div>
         )
 
-    // add logic for displaying errors
     return(
-        <>{ error ? <p role="alert">Could not find the repo data</p> : renderCard(repoData) }</>
+        <>{ error ? <p role="alert">Could not find the repo data</p> : renderCard(repo) }</>
     )
 }
 
