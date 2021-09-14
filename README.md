@@ -6,8 +6,12 @@ Try it out at [link_to_our_website]
 
 ## Local Installation & Usage
 
-* clone the repo
+### Installation
+* Clone the repository
 * `cd` into the root directory
-* run `npm install` to install all dependencies
-* run `npm run dev` to launch the app (it should automatically open in your default web browser)
-* run `npm test` to launch all test suits
+* Run `npm install` to install all dependencies
+
+### Usage
+* Run `npm run dev` to launch the app (it should automatically open in your default web browser)
+* Run `npm test` to launch all test suits
+* Run `npm run coverage` to check the test coverage
