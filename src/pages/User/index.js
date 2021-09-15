@@ -4,10 +4,10 @@ import './style.css';
 
 const User = () => {
   return (
-    <>
+    <div id="container">
       <Profile />
       <RepoList />
-    </>
+    </div>
   );
 };
 
