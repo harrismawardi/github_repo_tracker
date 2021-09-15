@@ -21,7 +21,7 @@ const RepoList = () => {
 
     return (
         <section id='repo-list'>
-            {error ? <p role="alert">Could not find user data</p> : repoElements}
+            {error ? <p role="alert">Could not find repo data</p> : repoElements}
         </section>
     )
 }
