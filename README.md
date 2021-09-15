@@ -2,7 +2,7 @@
 
 View detailed information about all of your public repositories!
 
-Try it out at https://github-repo-tracker-delta.vercel.app/repo?fluanisotropyanalysis-development
+Try it out at https://github-repo-tracker-delta.vercel.app/
 
 ## Local Installation & Usage
 
