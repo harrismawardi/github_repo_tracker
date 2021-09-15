@@ -1,20 +1,32 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import "./style.css";
 
-const Profile = ({ user }) => {
-  return (
-    <div className="user-card">
+function UserCard() {
+  const user = useSelector((state) => state.result.user);
+  const error = useSelector((state) => state.error);
+
+  const renderUser = (user) => (
+    <div id="user-card">
       <div className="user-intro">
-        <span className="user-name">{user.name}</span>
         <span className="user-login">{user.login}</span>
+        <br />
+        <span className="user-name">{user.name}</span>
       </div>
 
-      <img className="profile-img" src={user.avatar_url} alt="profile-pic" />
+      <img className="profile-img" src={user.avatar_url} />
 
       <div className="user-bio">
         <p>{user.bio}</p>
       </div>
     </div>
   );
-};
 
-export default Profile;
+  return (
+    <>
+      {error ? <p role="alert">Could not find user data</p> : renderUser(user)}
+    </>
+  );
+}
+
+export default UserCard;

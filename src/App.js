@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route } from "react-router-dom";
 import { Header, Footer } from "./layout";
 import { Welcome, User, Repo } from "./pages";
+import './index.css';
 
 function App() {
   return (

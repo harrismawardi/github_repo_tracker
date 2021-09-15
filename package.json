@@ -13,19 +13,28 @@
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMocks.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMocks.js"
-    }
+    },
+  "coveragePathIgnorePatterns": [
+    "/node_modules/",
+    "/actions/"
+  ],
+  "testEnvironment": "jsdom"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/harrismawardi/github_repo_tracker.git"
   },
-  "author": "",
+  "author": "Mariusz Las, Elicia Lobo & Harris Mawardi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/harrismawardi/github_repo_tracker/issues"
   },
   "homepage": "https://github.com/harrismawardi/github_repo_tracker#readme",
   "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.4",
+    "@babel/preset-react": "^7.14.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.2.1",
@@ -34,24 +43,19 @@
     "css-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.2",
     "jest": "^27.1.1",
+    "redux-devtools-extension": "^2.13.9",
     "style-loader": "^3.2.1",
     "webpack": "^5.52.0",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.1.1"
   },
   "dependencies": {
-    "@babel/core": "^7.15.5",
-    "@babel/plugin-proposal-class-properties": "^7.14.5",
-    "@babel/plugin-transform-runtime": "^7.15.0",
-    "@babel/preset-env": "^7.15.4",
-    "@babel/preset-react": "^7.14.5",
     "copy-to-clipboard": "^3.3.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.3.0",
     "redux": "^4.1.1",
-    "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0"
   }
 }

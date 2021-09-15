@@ -1,12 +1,13 @@
 import React from "react";
-import { RepoList } from "../../components";
+import { Profile, RepoList } from "../../components";
 
 const User = () => {
-  return(
-  <div>
-    Userpage
-    <RepoList />
-  </div>)
+  return (
+    <div>
+      <Profile />
+      <RepoList />
+    </div>
+  );
 };
 
 export default User;
