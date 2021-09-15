@@ -1,0 +1,9 @@
+span {
+    padding: 0.2em 0em 0.2em 0em;
+}
+
+#repo-card, .intro, .stats {
+    display: flex;
+    flex-direction: column;
+    margin: 1em 0 2em 0;
+}

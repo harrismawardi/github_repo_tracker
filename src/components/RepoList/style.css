@@ -1,0 +1,12 @@
+#repo-list{
+    margin-left: 50px;
+}
+
+.repo-link {
+    display: block;
+    color: black;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+}
+
