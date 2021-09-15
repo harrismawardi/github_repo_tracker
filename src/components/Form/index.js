@@ -14,10 +14,10 @@ function Form() {
         setUsername(e.target.value);
     }
 
-    function handleSubmit(e) {
+   async function handleSubmit(e) {
         try {
             e.preventDefault();
-            getResults(dispatch, username);
+            await getResults(dispatch, username);
             setRedirect(<Redirect to='/user' />)
         }catch(err){
             console.log(err.message)
