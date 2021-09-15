@@ -6,7 +6,7 @@ import './style.css'
 const Repo = () => {
 
   return (
-    <div id='container'>
+    <div id='repo-page-container'>
         <Profile />
         <RepoCard />
         <BackButton />
