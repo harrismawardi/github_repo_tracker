@@ -15,7 +15,7 @@ function App() {
         <Route exact path="/user">
           <User />
         </Route>
-        <Route exact path="/repo">
+        <Route exact path="/user/:repo">
           <Repo />
         </Route>
       </Switch>

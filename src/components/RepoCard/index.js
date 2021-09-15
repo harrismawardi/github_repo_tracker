@@ -9,6 +9,7 @@ function RepoCard() {
     // get name of the repo to be displyed
     const location = useLocation();
     const repoName = location.search.split('?')[1];
+
     // get data for single repo
     const allRepos = useSelector(state => state.result.repos);
     const repo = allRepos.filter(repo => repo.name === repoName)[0];
@@ -42,7 +43,7 @@ function RepoCard() {
         )
 
     return(
-        <>{ error ? <p role="alert">Could not find the repo data</p> : renderCard(repo) }</>
+        <>{ error ? <p role="alert">Could not find the repo data</p> : renderCard(repo[0]) }</>
     )
 }
 
