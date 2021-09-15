@@ -35,8 +35,8 @@ function UserCard() {
 
   return (
     <>
-      {/* {error ? <p role="alert">Could not find user data</p> :  */}
-      {userData}
+      {error ? <p role="alert">Could not find user data</p> : userData }
+    
     </>
   );
 }

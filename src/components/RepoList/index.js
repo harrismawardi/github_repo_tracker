@@ -21,7 +21,7 @@ const RepoList = () => {
 
     return (
         <section id='repo-list'>
-            {repoElements}
+            {error ? <p>{error}</p> : repoElements}
         </section>
     )
 }
