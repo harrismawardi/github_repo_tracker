@@ -6,6 +6,7 @@ import userEvent from "@testing-library/user-event";
 import { render } from '@testing-library/react';
 
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 
@@ -19,22 +20,24 @@ const TestProviders = ({ initState }) => {
         },
         error: null
     };
-    let testReducer = () => searchReducer(initState, { type: '@@INIT' })
+    let testReducer = () => reducer(initState, { type: '@@INIT' })
     const testStore = createStore(testReducer, applyMiddleware(thunk))
 
     return ({ children }) => (
         <Provider store={testStore}>
-            { children }
+            <Router>
+                { children }
+            </Router>
         </Provider>
     )
 }
 
-const renderWithReduxProvider = (ui, options={}) => {
+const renderWithReduxAndRouter = (ui, options={}) => {
     let TestWrapper = TestProviders(options)
     render(ui, { wrapper: TestWrapper, ...options })
 }
 
-global.renderWithReduxProvider = renderWithReduxProvider
+global.renderWithReduxAndRouter = renderWithReduxAndRouter
 global.React = React;
 global.render = render;
 global.userEvent = userEvent;

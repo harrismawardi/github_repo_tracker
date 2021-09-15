@@ -12,7 +12,7 @@ function Header() {
         <>
             <h2>Enter the GitHub username to get information about your public repos.</h2>
             <Form />
-            { error!==false ? <p>{ error }</p> : <Redirect to='/user' /> }
+            { error!==false ? <p role='alert'>{ error }</p> : <Redirect to='/user' /> }
         </>
     )
 }

@@ -1,13 +1,13 @@
 import React from "react";
-import { BackButton, RepoCard } from "../../components";
+import { BackButton, RepoCard, Profile } from "../../components";
 
 const Repo = () => {
-  // the RepoCard needs the repoName props !!!
 
   return (
     <>
-      <RepoCard />
-      <BackButton />
+        <BackButton />
+        <Profile />
+        <RepoCard />
     </>
   );
 };

@@ -19,7 +19,7 @@ function Form() {
     }
 
     return(
-        <form onSubmit={handleSubmit}>
+        <form aria-label="username-form" onSubmit={handleSubmit}>
             <input aria-label="username" type="text" value={username} onChange={updateInput}/>
             <input type="submit" value="Submit"/>
         </form>

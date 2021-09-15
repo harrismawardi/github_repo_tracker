@@ -9,7 +9,7 @@ const RepoList = () => {
 
     useEffect(() => {
         const renderElements = () => {
-           const userRepos = reposArr.map(repo => <NavLink to={`/user/${repo.name}`}>{repo.name}</NavLink>)
+           const userRepos = reposArr.map((repo, idx) => <NavLink to={`/repo?${repo.name}`} key={idx}>{repo.name}</NavLink>)
            setRepoElements(userRepos)
         }
         renderElements()
