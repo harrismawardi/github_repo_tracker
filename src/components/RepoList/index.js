@@ -6,8 +6,9 @@ import './style.css'
 
 const RepoList = () => {
 
-    const [repoElements, setRepoElements] = useState('hi')
+    const [repoElements, setRepoElements] = useState()
     const reposArr = useSelector(state => state.result.repos)
+    const error = useSelector(state => state.error)
 
     useEffect(() => {
         const renderElements = () => {
