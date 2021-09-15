@@ -43,7 +43,10 @@ function RepoCard() {
         )
 
     return(
-        <>{ error ? <p role="alert">Could not find the repo data</p> : renderCard(repo) }</>
+        <>
+        {/* { error ? <p role="alert">Could not find the repo data</p> :  */}
+        {renderCard(repo)}
+        </>
     )
 }
 

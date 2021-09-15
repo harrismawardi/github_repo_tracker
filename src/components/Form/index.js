@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getResults } from '../../actions';
 import { Redirect } from 'react-router-dom';
 import './style.css';
@@ -18,12 +18,11 @@ function Form() {
         try {
             e.preventDefault();
             await getResults(dispatch, username);
-            setRedirect(<Redirect to='/user' />)
+            // setRedirect(<Redirect to='/user' />)
+            document.location = '/user'
         }catch(err){
-            console.log(err.message)
+            console.log(err)
         }
-
-        {/* { error!==false || ? <p role='alert'>{ error }</p> : <Redirect to='/user' /> } */ }
         setUsername('');
     }
 

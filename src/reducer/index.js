@@ -9,8 +9,10 @@ const initState =
 
 const searchReducer = (state = initState, action) => {
     switch (action.type) {
+        case 'LOADING':
+            return {...state, error: null}
         case 'LOAD_RESULT':
-            return { ...state, result: action.payload, error: false }
+            return { ...state, result: action.payload}
         case 'SET_ERROR':
             return { ...state, error: action.payload }
         default:

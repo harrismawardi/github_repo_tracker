@@ -1,3 +1,8 @@
+
+const loading = {
+    type: 'LOADING',
+}
+
 const loadResult = (userObj, repoArr) => ({
     type: 'LOAD_RESULT',
     payload: {
@@ -8,6 +13,7 @@ const loadResult = (userObj, repoArr) => ({
 
 const getResults = async (dispatch, username) => {
     try {
+        dispatch(loading)
         const userData = await userRequest(username);
         const repoData = await repoRequest(username);
         dispatch(loadResult(userData, repoData))
