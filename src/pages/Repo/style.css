@@ -1,5 +1,14 @@
 #repo-page-container {
     display: flex;
-    justify-content: space-between;
+    margin:50px 100px;
     align-items: flex-start;
+}
+
+
+@media only screen and (max-width: 412px) {
+    #repo-page-container {
+        flex-direction: column;
+        align-items: center;
+        margin: 50px 50px;
+    }
 }
