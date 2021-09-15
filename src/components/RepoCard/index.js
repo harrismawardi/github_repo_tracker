@@ -8,10 +8,10 @@ function RepoCard() {
 
     // get name of the repo to be displyed
     const location = useLocation();
-    const repoName = location.path.split('/')[1];
+    const repoName = location.search.split('?')[1];
     // get data for single repo
     const allRepos = useSelector(state => state.result.repos);
-    const repo = allRepos.filter(repo => repo.name === repoName);
+    const repo = allRepos.filter(repo => repo.name === repoName)[0];
     const error = useSelector(state => state.error);
 
     function copyToClipboard(e) {
@@ -29,14 +29,14 @@ function RepoCard() {
 
                 <div className="stats">
                     <span className="repo-date">Created on: {repo.created_at.slice(0, 10)}</span>
-                    <span className="repo-lang">Language: {repo.language}</span>
-                    <span classname="repo-forks">Forks: {repo.forks_count}</span>
+                    <span className="repo-lang">{ repo.language ? <>Language: {repo.language}</> : <></> }</span>
+                    <span className="repo-forks">Forks: {repo.forks_count}</span>
                     <span className="repo-stars">Stargazers: {repo.stargazers_count}</span>
                 </div>
 
                 <div className="links">
-                    <button onClick={copyToClipboard} id="html_link">Copy HTML link</button>
-                    <button onClick={copyToClipboard} id="ssh_link">Copy SSH link</button>
+                    <button onClick={copyToClipboard} id="html_url">Copy HTML link</button>
+                    <button onClick={copyToClipboard} id="ssh_url">Copy SSH link</button>
                 </div>
             </div>
         )
