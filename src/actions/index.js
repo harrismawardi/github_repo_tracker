@@ -12,16 +12,18 @@ const loadResult = (userObj, repoArr) => ({
 })
 
 const getResults = async (dispatch, username) => {
+    dispatch(loading)
+    let userData;
+    let repoData;
     try {
-        dispatch(loading)
-        const userData = await userRequest(username);
-        const repoData = await repoRequest(username);
-        dispatch(loadResult(userData, repoData))
+        userData = await userRequest(username);
+        repoData = await repoRequest(username);
 
     } catch (err) {
         dispatch({type:'SET_ERROR', payload: `oh no! ${err.message}`})
         console.log(err);
     }
+    dispatch(loadResult(userData, repoData))
 }
 
 

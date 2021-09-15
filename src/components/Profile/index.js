@@ -25,7 +25,8 @@ function UserCard() {
           <div className="user-bio">
             <p>{user.bio}</p>
           </div>
-        </div>)
+        </div>
+      )
     };
     renderUser()
 
