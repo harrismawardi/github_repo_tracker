@@ -1,14 +1,16 @@
 import React from "react";
 import { BackButton, RepoCard, Profile } from "../../components";
 
+import './style.css'
+
 const Repo = () => {
 
   return (
-    <>
-        <BackButton />
+    <div id='repo-page-container'>
         <Profile />
         <RepoCard />
-    </>
+        <BackButton />
+    </div>
   );
 };
 

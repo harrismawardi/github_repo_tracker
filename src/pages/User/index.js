@@ -1,11 +1,13 @@
 import React from "react";
-import { Profile, RepoList } from "../../components";
+import { BackButton, Profile, RepoList } from "../../components";
+import './style.css';
 
 const User = () => {
   return (
-    <div>
+    <div id="user-page-container">
       <Profile />
       <RepoList />
+      <BackButton />
     </div>
   );
 };

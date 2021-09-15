@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
+import './style.css'
+
 const RepoList = () => {
 
     const [repoElements, setRepoElements] = useState('hi')
@@ -9,7 +11,7 @@ const RepoList = () => {
 
     useEffect(() => {
         const renderElements = () => {
-           const userRepos = reposArr.map((repo, idx) => <NavLink to={`/repo?${repo.name}`} key={idx}>{repo.name}</NavLink>)
+           const userRepos = reposArr.map((repo, idx) => <NavLink className="repo-link" to={`/repo?${repo.name}`} key={idx}>{repo.name}</NavLink>)
            setRepoElements(userRepos)
         }
         renderElements()
@@ -17,7 +19,7 @@ const RepoList = () => {
 
 
     return (
-        <section>
+        <section id='repo-list'>
             {repoElements}
         </section>
     )
