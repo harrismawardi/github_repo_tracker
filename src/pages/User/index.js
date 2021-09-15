@@ -1,12 +1,13 @@
 import React from "react";
 import { Profile, RepoList } from "../../components";
+import './style.css';
 
 const User = () => {
   return (
-    <div>
+    <>
       <Profile />
       <RepoList />
-    </div>
+    </>
   );
 };
 
