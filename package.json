@@ -14,11 +14,11 @@
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMocks.js",
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMocks.js"
     },
-  "coveragePathIgnorePatterns": [
-    "/node_modules/",
-    "/actions/"
-  ],
-  "testEnvironment": "jsdom"
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/actions/"
+    ],
+    "testEnvironment": "jsdom"
   },
   "repository": {
     "type": "git",
@@ -56,6 +56,7 @@
     "react-redux": "^7.2.5",
     "react-router-dom": "^5.3.0",
     "redux": "^4.1.1",
+    "redux-persist": "^6.0.0",
     "redux-thunk": "^2.3.0"
   }
 }
