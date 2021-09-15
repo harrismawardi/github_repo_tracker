@@ -14,10 +14,10 @@ function Form() {
         setUsername(e.target.value);
     }
 
-    function handleSubmit(e) {
+   async function handleSubmit(e) {
         try {
             e.preventDefault();
-            getResults(dispatch, username);
+            await getResults(dispatch, username);
             setRedirect(<Redirect to='/user' />)
         }catch(err){
             console.log(err.message)
@@ -30,7 +30,7 @@ function Form() {
     return (
         <>
         <form aria-label="username-form" onSubmit={handleSubmit}>
-            <input aria-label="username" type="text" value={username} onChange={updateInput} />
+            <input aria-label="username" type="text" placeholder='username' value={username} onChange={updateInput} />
             <input type="submit" value="Submit" />
         </form>
         {redirect}

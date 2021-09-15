@@ -1,5 +1,6 @@
 #repo-list{
-    margin-left: 50px;
+    margin: 0px 250px;
+    width: 500px;
 }
 
 .repo-link {
@@ -10,3 +11,10 @@
     font-size: 1.4rem;
 }
 
+@media only screen and (max-width: 412px){
+
+    #repo-list{
+        margin: auto;
+        width:100%
+    }
+}
