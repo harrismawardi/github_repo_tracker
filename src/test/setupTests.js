@@ -32,12 +32,12 @@ const TestProviders = ({ initState }) => {
     )
 }
 
-const renderWithReduxProvider = (ui, options={}) => {
+const renderWithReduxAndRouter = (ui, options={}) => {
     let TestWrapper = TestProviders(options)
     render(ui, { wrapper: TestWrapper, ...options })
 }
 
-global.renderWithReduxProvider = renderWithReduxProvider
+global.renderWithReduxAndRouter = renderWithReduxAndRouter
 global.React = React;
 global.render = render;
 global.userEvent = userEvent;
