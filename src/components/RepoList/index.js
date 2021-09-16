@@ -6,8 +6,9 @@ import './style.css'
 
 const RepoList = () => {
 
-    const [repoElements, setRepoElements] = useState('hi')
+    const [repoElements, setRepoElements] = useState()
     const reposArr = useSelector(state => state.result.repos)
+    const error = useSelector(state => state.error)
 
     useEffect(() => {
         const renderElements = () => {
@@ -19,8 +20,8 @@ const RepoList = () => {
 
 
     return (
-        <section id='repo-list'>
-            {repoElements}
+        <section aria-label='list-of-repositories'>
+            {error ? <p role="alert">Could not find repo data</p> : repoElements}
         </section>
     )
 }
